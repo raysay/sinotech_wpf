@@ -16,13 +16,13 @@
 
 # 課程主軸：
 - WPF (Windows Presentation Foundation)
-1. XAML基礎
-2. MVVM架構
-3. HandyControl
-4. WPF Canvas
+> 1. XAML基礎
+> 2. MVVM架構
+> 3. HandyControl
+> 4. WPF Canvas
 - Helix-toolkit
-1. Nuget 設定
-2. 官方範例說明
+> 1. Nuget 設定
+> 2. 官方範例說明
 - Web API 資料交換
-1. Django後台啟動
-2. MVVM 進階
+> 1. Django後台啟動
+> 2. MVVM 進階
