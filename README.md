@@ -6,6 +6,7 @@
 ## 課程要求
 - C# 基礎 (Visual Studio操作、變數、迴圈、事件)
 - Web 基礎
+- git 基礎
 
 ## 其他可能有幫助的背景
 - 物件導向 (Object-oriented programming)
@@ -14,6 +15,13 @@
 - Django Restframework
 
 # 課程主軸：
-- WPF
-- Helix3D
+- WPF (Windows Presentation Foundation)
+* XAML基礎
+* MVVM架構
+* HandyControl
+* WPF Canvas
+- Helix-toolkit
+* Nuget 設定
+* 官方範例說明
 - Web API 資料交換
+* MVVM 進階
