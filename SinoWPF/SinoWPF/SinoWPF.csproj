@@ -61,6 +61,7 @@
     <Compile Include="dialog.xaml.cs">
       <DependentUpon>dialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\CalculatorModel.cs" />
     <Compile Include="sample2.xaml.cs">
       <DependentUpon>sample2.xaml</DependentUpon>
     </Compile>
@@ -72,6 +73,17 @@
     </Compile>
     <Compile Include="sample5.xaml.cs">
       <DependentUpon>sample5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="sample6.xaml.cs">
+      <DependentUpon>sample6.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="sample7.xaml.cs">
+      <DependentUpon>sample7.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\CalculatorViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Compile Include="View\CalculatorView.xaml.cs">
+      <DependentUpon>CalculatorView.xaml</DependentUpon>
     </Compile>
     <Page Include="dialog.xaml">
       <SubType>Designer</SubType>
@@ -105,6 +117,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="sample6.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="sample7.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CalculatorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -133,5 +157,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
