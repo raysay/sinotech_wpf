@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SinoWPF.View"
+        xmlns:CustomControl="clr-namespace:SinoWPF.CustomControl"
         xmlns:hc="https://handyorg.github.io/handycontrol" x:Class="SinoWPF.View.step1"
         mc:Ignorable="d"
         Title="step1" Height="450" Width="800">
@@ -21,12 +22,13 @@
             <hc:CheckComboBox Width="600" ShowClearButton="True" ShowSelectAllButton="True"
                               Style="{StaticResource CheckComboBoxExtend}"
                               ItemsSource="{Binding Levels}" SelectionChanged="CheckComboBox_SelectionChanged"/>
+            <Button Click="Button_Click" VerticalAlignment="Top">測試資料</Button>
         </StackPanel>
         <StackPanel x:Name="level_input" Orientation="Vertical" Grid.Row="1" Grid.Column="0" VerticalAlignment="Top">
             
         </StackPanel>
-        <Canvas x:Name="canvas" Grid.Column="1" Grid.Row="1">
+        <CustomControl:PanAndZoomCanvas x:Name="canvas" Grid.Column="1" Grid.Row="1">
             
-        </Canvas>
+        </CustomControl:PanAndZoomCanvas>
     </Grid>
 </Window>

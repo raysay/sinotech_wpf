@@ -38,7 +38,7 @@ namespace SinoWPF.View
                 item.selected = true;
             }
             input_refresh();
-            DrawLevels();
+            vm.DrawLevels(canvas);
         }
 
         void input_refresh()
@@ -64,57 +64,23 @@ namespace SinoWPF.View
         {
             vm.Levels[(int)(sender as TextBox).Tag].height =Model.BasicStationInfo.ToDouble((sender as TextBox).Text);
 
-            DrawLevels();
+            vm.DrawLevels(canvas);
         }
 
-        public void DrawLevels()
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            canvas.Children.Clear();
+            vm.Levels[0].selected = true;
+            vm.Levels[0].height = 108;
+            vm.Levels[3].selected = true;
+            vm.Levels[3].height = 100;
+            vm.Levels[5].selected = true;
+            vm.Levels[5].height = 95;
+            vm.Levels[6].selected = true;
+            vm.Levels[6].height = 94;
+            input_refresh();
+            vm.DrawLevels(canvas);
 
-            List<double> heights = new List<double>();
-            foreach (var floor in vm.Levels)
-            {
-                if (floor.selected)
-                    heights.Add(floor.height);
-            }
-            
-            foreach (var floor in vm.Levels)
-            {
-                if (floor.selected)
-                {
-                    double c_height = change_coordinate(floor.height, heights.Max(), heights.Min(),canvas.ActualHeight);
-                    Line newLine = new Line
-                    {
-                        X1 = 50,
-                        Y1 = c_height,
-                        X2 = canvas.ActualWidth - 50,
-                        Y2 = c_height,
-                        Stroke = Brushes.Blue,
-                        StrokeThickness = 1
-                    };
-                    canvas.Children.Add(newLine);
 
-                    TextBlock textBlock = new TextBlock();
-                    textBlock.Text = floor.name.ToString();
-                    textBlock.Foreground = new SolidColorBrush(Colors.Blue);
-                    Canvas.SetLeft(textBlock, 10);
-                    Canvas.SetTop(textBlock, c_height - 10);
-                    canvas.Children.Add(textBlock);
-
-                    TextBlock textBlock1 = new TextBlock();
-                    textBlock1.Text = floor.height.ToString() + " m";
-                    textBlock1.Foreground = new SolidColorBrush(Colors.Blue);
-                    Canvas.SetLeft(textBlock1, canvas.ActualWidth - 40);
-                    Canvas.SetTop(textBlock1, c_height - 10);
-                    canvas.Children.Add(textBlock1);
-                }
-            }
         }
-
-        double change_coordinate(double height, double max, double min, double canvas_height)
-        { 
-            return canvas_height - (canvas_height / (max - min + 2) * (height - min)) - 20;
-        }
-
     }
 }
